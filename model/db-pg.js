@@ -1,8 +1,8 @@
 //################################################
-const pg = require("pg");
-const dotenv = require("dotenv");
+// const pg = require("pg");
+// const dotenv = require("dotenv");
 
-dotenv.config();
+// dotenv.config();
 // console.log(process.env)
 //################################################
 
@@ -17,42 +17,42 @@ dotenv.config();
 
 
 //################################################
-const { Client } = require('pg');
-
-const client = new Client({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'patras-league',
-    password: '24121998',
-    port: 5432
-});
-
-client.connect((err) => {
-    if (err)
-        throw err;
-    else console.log("connected to db")
-});
-
-
-module.exports = client;
-
-// 'use strict';
-
 // const { Client } = require('pg');
 
 // const client = new Client({
-//     connectionString: process.env.DATABASE_URL,
-//     ssl: {
-//         rejectUnauthorized: false
-//     }
+//     user: 'postgres',
+//     host: 'localhost',
+//     database: 'patras-league',
+//     password: '24121998',
+//     port: 5432
 // });
 
 // client.connect((err) => {
 //     if (err)
 //         throw err;
+//     else console.log("connected to db")
 // });
 
-// module.exports = client
+
+// module.exports = client;
+
+'use strict';
+
+const { Client } = require('pg');
+
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+
+client.connect((err) => {
+    // if (err)
+    //     throw err;
+});
+
+module.exports = client
 
 //################################################
 
