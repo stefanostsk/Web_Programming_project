@@ -1,0 +1,50 @@
+body{
+    background-color: black;
+}
+
+.side-nav{
+    padding: 1em;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 1em;
+    /* background-color: black; */
+    margin-bottom: 2em;
+    display: grid;
+    row-gap: 1.5em;
+}
+
+.admin-btn{
+    display:block;
+    width: 40%;
+    height: 2em;
+    font-size: 25px;
+    text-align: center;
+    background-color: whitesmoke;
+    color: blue;
+    border-radius: 8px;
+    margin: 0 auto 0.5em auto;
+    cursor: pointer;
+    border: 3px solid royalblue;
+    transition: all 0.1s ease;
+    padding: 3px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    font-family: tahoma;
+}
+
+
+.admin-btn:hover{
+    background-color: rgb(69, 69, 108);
+    color: whitesmoke;
+    border: 3px solid royalblue;
+    box-shadow: 0px 7px 15px rgb(134, 97, 2);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.admin-btn:active {
+    background-color: rgb(92, 92, 183);
+    border-color: royalblue;
+    transform: scale(0.99);
+    outline: none;
+}
+

@@ -1,0 +1,20 @@
+<div id="alert" class="modal-sign" style="display: block;">
+        <div class="alert-content modal-sign-content">
+             <span id="close-sign-alert-index" class="close-sign-alert">&times;</span>
+            <fieldset class="fldset">
+               
+                <h3>Team Entries have closed. <br><br>Please contact with the administrator team for a solution!</h3>
+            
+                <button id="alert-btn-index1">Reach out</button>
+            </fieldset>
+        </div>
+    </div>
+    <script>
+        const alertbtnclose = document.querySelector("#close-sign-alert-index");
+        alertbtnclose.onclick = () => {
+         document.querySelector(".modal-sign").style.display = "none";}
+         
+         const alertbtnclose2 = document.querySelector("#alert-btn-index1");
+        alertbtnclose2.onclick = () => {
+         document.querySelector(".modal-sign").style.display = "none";}
+    </script>

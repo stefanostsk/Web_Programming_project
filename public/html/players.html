@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+    <head>
+        <title> Patras League </title>
+        <link href="//db.onlinewebfonts.com/c/93a467f70a3e7b27a9b52a686f351dbe?family=DINNextLTPro-Regular" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black Ops One">
+        <link rel="stylesheet" href="/public/css/modal.css" >
+        <link rel="stylesheet" href="/public/css/loginstyle.css" >
+        <link rel="stylesheet" href="/public/css/index.css" >
+        <link rel="stylesheet" href="/public/css/players.css" >
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Alexandros Mikelis - Stefanos Tsaknakis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+    <body>
+      <script src="/public/js/navbar.js"></script>
+      
+      <div class="navbar"></div>
+
+      <div id="signinmodal" class="modal-sign"></div>
+
+      <script src="/public/js/modalView.js"></script>
+      <script src="/public/js/modalService.js"></script>
+        <!-- <div class="navbar">
+                <div class="navbar-logo">
+                    <img src="/public/images/Logo@2x.png" alt="" width="59" height="59">
+                    <a href="#home" class="nav-item nav-button nav-wide"> Patras League </a>
+                </div>
+                
+                <div class="nav-center-left">
+                    <div class="navlink"><a class="matches" href="#matches"><span><i class="fa fa-futbol-o" aria-hidden="true"></i> MATCHES</span></a></div>
+                    <div class="navlink"><a href="#teams"><i class="fa fa-users" aria-hidden="true"></i> TEAMS</a></div>
+                    <div class="navlink"><a href="#scores"><i class="fa fa-th"></i> SCORES</a></div>
+                    <div class="navlink"><a href="#statistics"><i class="fa fa-bar-chart" aria-hidden="true"></i> STATISTICS</a></div>
+                    <div class="navlink"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> PLAYERS</a></div>
+                </div>
+                <div class="nav-right">
+                  <ul>
+                    <li>
+                      <button class="sign-in">
+                        <a href="registration-page.html">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ball-football"
+                          width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" 
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                          <circle cx="12" cy="12" r="9" />
+                          <path d="M12 7l4.76 3.45l-1.76 5.55h-6l-1.76 -5.55z" />
+                          <path d="M12 7v-4m3 13l2.5 3m-.74 -8.55l3.74 -1.45m-11.44 7.05l-2.56 2.95m.74 -8.55l-3.74 -1.45" />
+                          </svg>
+                          <p><strong>Sign Up</strong></p>
+                        </a>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="sign-in" id="signinbtn">
+                        <a>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login" width="50"
+                          height="50" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path>
+                          <path d="M20 12h-13l3 -3m0 6l-3 -3"></path>
+                          </svg>
+                          <p><strong>Log in</strong></p>
+                        </a>
+                      </button>
+                    </li>
+                  </ul>
+                </div> -->
+                <!-- <div class="nav-right">
+                    <img src="/images/clipart2027230.png" height="40">
+                    <a href="#signin" class="sign-in">Sign Up</a>
+                    <button class="sign-in" id="signinbtn">Log In</button>
+                </div> -->
+        <!-- </div>
+
+        <div id="signinmodal" class="modal-sign">
+          <form class="signin modal-sign-content" method="POST" action="/login">
+            <span class="close-sign">&times;</span>
+            <fieldset>
+                <h1>
+                  <img src="/public/images/Logo@2x.png" alt="" width="59" height="59">
+                  Log in
+                  <i class="fas fa-sign-in-alt fa-2x" id="sign-in-icon"></i>
+                </h1>  -->
+                <!-- <hr> -->
+      
+                <!-- <div class='inputwi'>
+                    <label for="email-signin"><strong>Email</strong> <br></label>
+                    <input type="email" name="UserEmail" id="email-signin" placeholder="" required>
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                    <br> 
+                </div>
+      
+                <div class='inputwiPas'>
+                    <label for="password-signin"><strong>Password</strong> <br></label>
+                    <input type="password" name="UserPass" id="password-signin" placeholder="" required>
+                    <i class="fa fa-unlock-alt fa-lg fa-fw" id="togglePasswordSignIn"></i>
+                    <br> 
+                </div>
+        
+              
+      
+      
+              <a href="" id='forgot-pass'><u>Forgot Password ?</u></a>
+              <br>
+      
+              <button>Log In</button>
+            </fieldset>
+          </form>
+        </div> -->
+        
+    <!-- <script>
+      document.getElementById("signinmodal").style.display = "block";
+    </script> -->
+
+    <!-- <script src="/public/js/loginmodal.js"></script> -->
+
+
+        <!-- meet our elites    top scorrer  
+
+        all players  (sort by ->team, most betted on,goals scorred) -->
+        
+        
+
+        <div class="container">
+            <label for="mikrografies"><h1>Our Top 10</h1></label>
+            <label for="top-scorrer"><h1>TOP PLAYER</h1></label>  
+
+            <div id="mikrografies" class="mikrografies scroller">
+              <div>
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+              </div>
+              <div>
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>       
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+                <div>Participated in:</div>
+              </div>                
+              <div>
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+                <div>Participated in:</div>
+              </div>              
+              <div>
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+                <div>Participated in:</div>
+              </div>               
+               <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+            </div>
+            <div class="top-scorrer" id="top-scorrer">
+                <img src="/public/images/football-player-svgrepo-com.svg"> 
+                <div style="text-align:center; font-size:x-large">Γεώργιος</div>              
+                <div class="top-info">
+                  <div>Time Played:</div>
+                  <div>Time Played:</div>
+                  <div>Time Played:</div>
+                  <div>Time Played:</div>
+                  <div>Time Played:</div>
+                  <div>Time Played:</div>
+                  <div>Time Played:</div>
+                </div>
+                
+            </div>
+        </div>
+<div class="space"></div>
+        <div class="new-cont">
+          <div class="all-seminav">
+            <h1>ALL PLAYERS</h1>
+            <form class="search" action="">
+              <p class="search-title" style="color:white">Search for player or Team</p>
+              <input class="inputd" type="text" placeholder="Search.." name="search" id="search">
+              <button type="submit"><i class="fa fa-search" style="color:black" ></i></button>
+            </form>
+          </div>
+          <div class="all-players">
+            <div>
+              <div class="containerdiv">
+                <img class="logoimg" src="/public/images/team-logos/boston.jpg"> 
+                <img class="playerimg" src="/public/images/football-player-svgrepo-com.svg"> 
+              </div>
+              <span  class="hidden-stats">
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+              </span>
+            </div>
+            <div>
+              <div class="containerdiv">
+                <img class="logoimg" src="/public/images/team-logos/boston.jpg"> 
+                <img class="playerimg" src="/public/images/football-player-svgrepo-com.svg"> 
+              </div>
+              <span  class="hidden-stats">
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+              </span>
+            </div>
+            <div>
+              <div class="containerdiv">
+                <img class="logoimg" src="/public/images/team-logos/boston.jpg"> 
+                <img class="playerimg" src="/public/images/football-player-svgrepo-com.svg"> 
+              </div>
+              <span  class="hidden-stats">
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+              </span>
+            </div>
+            <div>
+              <div class="containerdiv">
+                <img class="logoimg" src="/public/images/team-logos/boston.jpg"> 
+                <img class="playerimg" src="/public/images/football-player-svgrepo-com.svg"> 
+              </div>
+              <span  class="hidden-stats">
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+              </span>
+            </div>
+            <div>
+              <div class="containerdiv">
+                <img class="logoimg" src="/public/images/team-logos/boston.jpg"> 
+                <img class="playerimg" src="/public/images/football-player-svgrepo-com.svg"> 
+              </div>
+              <span  class="hidden-stats">
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+              </span>
+            </div>
+            <div>
+              <div class="containerdiv">
+                <img class="logoimg" src="/public/images/team-logos/boston.jpg"> 
+                <img class="playerimg" src="/public/images/football-player-svgrepo-com.svg"> 
+              </div>
+              <span  class="hidden-stats">
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+              </span>
+            </div>
+            <div>
+              <div class="containerdiv">
+                <img class="logoimg" src="/public/images/team-logos/boston.jpg"> 
+                <img class="playerimg" src="/public/images/football-player-svgrepo-com.svg"> 
+              </div>
+              <span  class="hidden-stats">
+                <div style="text-align:center">Γεώργιος</div><br>
+                <div>Game winning goals:10</div>
+                <div>Participated in:</div>
+                <div>Time Played:</div>
+                <div>Status:Retired</div>
+                <div>Participated in:</div>
+              </span>
+            </div>
+            <!-- <img src="images/football-player-svgrepo-com.svg"> 
+            <img src="images/football-player-svgrepo-com.svg"> 
+            <img src="images/football-player-svgrepo-com.svg"> 
+            <img src="images/football-player-svgrepo-com.svg"> 
+            <img src="images/football-player-svgrepo-com.svg"> 
+            <img src="images/football-player-svgrepo-com.svg"> 
+            <img src="images/football-player-svgrepo-com.svg"> 
+            <img src="images/football-player-svgrepo-com.svg"> 
+            <img src="images/football-player-svgrepo-com.svg">  -->
+          </div>
+
+        </div>
+
+        <script src="/public/js/players.js"></script>
+    </body>
+</html>

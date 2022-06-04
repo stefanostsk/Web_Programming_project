@@ -1,0 +1,279 @@
+
+body{
+    background-color:beige;
+}
+
+.signup * {
+    color: purple;
+}
+
+.signflex{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.signflex i{
+    flex-grow: 1;
+    flex-basis: 30%;
+    text-align: end;
+}
+
+.signflex h1{
+    padding-left: 1em;
+} 
+
+.signflex h5{
+    padding: 0;
+    margin:0;
+    padding-left: 4em;
+} 
+
+.signgrid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:6em 6em 6em 6em fit-content 8em 6em 6em 6em;
+    grid-template-areas: "a ." 
+                         "b f"
+                         "c h" 
+                         "d i"
+                         "e g"
+                         ". q"
+                         "j ."
+                         "k ."
+                         "l .";
+    /* justify-items: start; */
+}
+
+.inputwi:nth-child(1){
+    grid-area: a;
+}
+.inputwi:nth-child(2){
+    grid-area: b;
+}
+.inputwi:nth-child(3){
+    grid-area: c;
+}
+.inputwiPas:nth-child(4){
+    grid-area: d;
+}
+.inputwiPas:nth-child(5){
+    grid-area: e;
+}
+.inputwi:nth-child(8){
+    grid-area: f;
+}
+.inputwi:nth-child(9){
+    grid-area: g;
+}
+.inputwi:nth-child(10){
+    grid-area: h;
+}
+.inputwi:nth-child(11){
+    grid-area: i;
+}
+
+.inputwi:nth-child(14){
+    grid-area: j;
+    width: 130%;
+}
+.inputwi:nth-child(15){
+    grid-area: k;
+    width: 130%;
+} 
+.inputwi:nth-child(16){
+    grid-area: l;
+    width: 130%;
+}
+
+.team-label h2{
+    padding-top: 3em;
+    /* margin:0; */
+    padding-left: 0.25em;
+}
+/* .signflex i,.signflex h1{
+    flex-basis: 50%;
+    justify-self: flex-end;
+}
+.signflex:first-child{
+    justify-self: flex-start;
+} */
+
+label h2{
+    padding:0;
+    margin:0;
+    padding-left: 1.5em;
+    color: red !important;
+    text-decoration: underline;
+}
+
+label[for=dum] h2{
+    padding:0;
+    margin:0;
+    padding-top:2em;
+}
+
+
+.signup>fieldset {
+    border: 0;
+    /* margin: 1em auto;
+    background-color: white;
+    border-radius: 14px;
+    width: 60%;
+    text-align: center;
+    box-shadow: 20px 20px rgb(150, 66, 27); */
+}
+
+.signup>fieldset>h1 {
+    margin-top: 0;
+}
+
+.signup input{
+    width: 90%;
+    padding: 0.5em;
+    /* margin: 1em 0 1em 2em; */
+    margin: 0em 0 0em 2em;
+    border: 4px solid cornflowerblue;
+    border-radius: 8px;
+    transition: all 0.1s ease;
+}
+
+.signup label{
+    margin: 1em 0 1em 2em;
+}
+
+.signup input:hover {
+    border: 4px solid blue;
+}
+
+.signup input::placeholder {
+    color: #31170bd2;
+    transition: none;
+}
+
+.signup input:focus {
+    border: 4px solid darkblue;
+    outline: none; 
+    box-shadow: 0 0 0 4px thistle;
+    border-radius: 8px;
+}
+    
+.signup input:focus::placeholder {
+    color: rgba(0, 0, 0, 0.486);
+}
+
+#password2 {
+    margin: 1em 0 2.5em 0;
+}
+
+.signup button[type="submit"]{
+    display:block;
+    width: 6em;
+    height: 2em;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(43, 43, 236);
+    color: white;
+    border-radius: 7px;
+    margin: 0 auto 0.5em auto;
+    cursor: pointer;
+    border: 2px solid blue;
+    transition: all 0.1s ease;
+    padding: 3px;
+}
+
+.signup button[type="submit"]:hover{
+    background-color: darkblue;
+    color: white;
+    border: 3px solid blue;
+    box-shadow: 0px 3px 17px purple;
+}
+
+.signup button[type="submit"]:active {
+    transform: scale(0.99);
+    outline: none;
+}
+
+#forgot-pass:hover {
+    cursor: pointer;
+}
+
+#forgot-pass2:hover {
+    cursor: pointer;
+}
+
+#user-plus-icon {
+    position: relative;
+    float: right;
+    top: 3px;
+    right: 15px;
+}
+
+.inputwi, .inputwiPas{
+    padding-top: 2em;
+    position: relative;
+}
+
+.inputwi input {
+    box-sizing: border-box;
+    padding-right: 35px;
+}
+
+.inputwi i{
+    position: absolute;
+    top: 68px;
+    right: 7.5%;
+    color: burlywood;
+}
+
+.phones i:nth-child(2){
+    position:unset;
+}
+
+.inputwiPas input {
+    box-sizing: border-box;
+    padding-right: 33px;
+}
+
+.inputwiPas i{
+    position: absolute;
+    right: 7.5%;
+    top: 68px;
+    cursor: pointer;
+    color: burlywood;
+}
+
+.inputwiOrg i{
+    right: 8%;
+}
+
+.inputwi input:focus + i, .inputwi input:hover + i, .inputwiPas input:focus + i, .inputwiPas input:hover + i{
+    color: blue;
+}
+
+
+.inputwi *, .inputwiPas *{
+    font-size: 1em;
+}
+
+.input-label{
+    font-size: 20px;
+}
+
+#add-phone{
+    margin-top: 0.5em;
+    margin-left: 3em;
+    border-radius: 3px;
+    font-weight: bolder;
+    background-color: rgb(251, 251, 144);
+    height: 2em;
+    border: 2px solid rgb(129, 125, 103);
+}
+
+#add-phone:hover{
+    color:black;
+    border:2.5px solid black;
+}
+#add-phone:active {
+    transform: scale(0.97);
+    outline: none;
+}

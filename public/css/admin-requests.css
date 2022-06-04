@@ -1,0 +1,102 @@
+body {
+    background-color: rgb(61, 59, 59);
+    color:black;
+}
+
+.requests-main {
+    padding: 1em;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1em;
+    background-color: rgb(125, 109, 109);
+    margin-bottom: auto;
+    margin-bottom: 2em;
+}
+
+form , fieldset {
+    background-color: whitesmoke;
+}
+
+.request {
+    display: flex;
+    /* align-items: center; */
+}
+
+.accept-btn,.deny-btn{
+    display:block;
+    width: calc(10% + 8em);
+    height: 3em;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    background-color: rgb(205, 196, 196);
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 3px solid black;
+    transition: all 0.1s ease;
+    padding: 3px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    font-family: tahoma;
+}
+
+.accept-btn:hover,.deny-btn:hover{
+    background-color: rgb(49, 52, 49);
+    color: whitesmoke;
+    border: 3px solid black;
+    box-shadow: 0px 7px 15px black;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+
+.accept-btn:active,.deny-btn:active{
+    background-color: rgb(125, 109, 109);
+    border-color: #9E5A63;
+    transform: scale(0.99);
+    outline: none;
+}
+
+.denyall{
+    display:block;
+    width: calc(10% + 8em);
+    height: 2em;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 3px solid rgb(202, 93, 93);
+    transition: all 0.1s ease;
+    padding: 3px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    font-family: tahoma;
+}
+
+.denyall:hover{
+    color: red;
+    border: 3px solid rgb(255, 0, 0);
+    box-shadow: 0px 7px 15px black;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.denyall:active{
+    background-color: #9E5A63;
+    color:white;
+    border-color: #9E5A63;
+    transform: scale(0.99);
+    outline: none;
+}
+
+div h5:first-child{
+    margin-bottom: 5px;
+}
+
+div h5:nth-child(n+2){
+    margin: 5px 0em;
+}
+
+

@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/css/time-selection.css">
+
+    <link rel="stylesheet" href="/public/css/signed-manager-main.css" >
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black Ops One">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div id="mySidepanel" class="sidepanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#">MATCHES</a>
+          <a href="#">TEAMS</a>
+          <a href="#">SCORES</a>
+          <a href="#">STATISTICS</a>
+          <a href="#">PLAYERS</a>
+        </div>
+        <button id="mobile-nav-open" class="header-icon" onclick="openNav()">
+          <img id="menu-svg" src="/public/images/menu_icon.svg">
+        </button>  
+        <script>
+          function openNav() {
+           document.getElementById("mySidepanel").style.width = "250px";
+         }
+         function closeNav() {
+           document.getElementById("mySidepanel").style.width = "0";
+         }
+         </script> 
+
+          <!-- <div class="navbar"> -->
+                <div class="navbar-logo">
+                    <img src="/public/images/Logo@2x.png" alt="" width="59" height="59">
+                    <a href="#home" class="nav-item nav-button nav-wide"> Patras League </a>
+                </div>
+                
+                <!-- <div class="nav-center-left">
+                    <div class="navlink"><a class="matches" href="#matches"><span><i class="fa fa-futbol-o" aria-hidden="true"></i> MATCHES</span></a></div>
+                    <div class="navlink"><a href="#teams"><i class="fa fa-users" aria-hidden="true"></i> TEAMS</a></div>
+                    <div class="navlink"><a href="#scores"><i class="fa fa-th"></i> SCORES</a></div>
+                    <div class="navlink"><a href="#statistics"><i class="fa fa-bar-chart" aria-hidden="true"></i> STATISTICS</a></div>
+                    <div class="navlink"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> PLAYERS</a></div>
+                </div> -->
+                <div class="nav-right">
+                  <ul>
+                    <li>
+                      <button class="sign-in">
+                        <a href="team-layout-management.html">
+                            <i class="fa-solid fa-people-group fa-2x"></i>
+                          <p><strong>Team Layout</strong></p> 
+                        </a>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="sign-in" id="signinbtn">
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="50" height="50" 
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                            <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                            </svg>
+                          <p><strong>Log out</strong></p>
+                        </a>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+<!-- <div class="bigflex">
+    <div class="selectors">
+        <div class="selectors-sel">
+            <select id="alloptions" required>
+                <option value="default0" disabled selected> Choose below</option>
+                <option value="reserve"> Reserve Stadium</option>
+                <option value="scrim"> Apply for Scrimmage</option>
+            </select>  
+            <select class="notselected" id="stadiums" required>
+                <option value="default1" disabled selected> Select Stadium</option>
+                <option value="stadium1"> Stadium1</option>
+                <option value="stadium2"> Stadium2</option>
+            </select>  
+            <select class="notselected" id="scrims" required>
+                <option value="default2" disabled selected> Select Opponent</option>
+                <option value="team1"> Team1</option>
+                <option value="team2"> Team2</option>
+            </select>  
+            <img src="/images/stadium.jpg">
+
+            <div class="sub-flex">
+                <img src="/images/team-logos/boston.jpg">
+                <span>VS</span>
+                <img src="/images/team-logos/boston.jpg">
+            </div>
+        </div>       -->
+        <p style="font-size:x-large; color:rgb(183, 0, 255); text-align: left;">Please select either option
+           for renting a field/stadium or for notifying<br> another manager
+          for your intention to play a scrimmage.
+        </p>
+      <div class="grid1">
+        <div class="btnsel">
+          <button class="selb">Reserve Stadium</button>
+          <select class="notselected" id="stadiums" required>
+            <option value="default1" disabled selected> Select Stadium</option>
+            <option value="stadium1"> Stadium1</option>
+            <option value="stadium2"> Stadium2</option>
+          </select>  
+        </div>
+        <div class="btnsel2">
+          <button  class="selb">Request Scrimmage</button>
+          <select class="notselected" id="scrims" required>
+            <option value="default2" disabled selected> Select Opponent</option>
+            <option value="team1"> Team1</option>
+            <option value="team2"> Team2</option>
+          </select> 
+        </div>
+
+        <input type="date" class="dateinp">
+
+      </div>
+    <!-- </div> -->
+    
+
+    <div id='all-container'>
+    
+    <div id="daymodal" class="modal-day">
+        <div class="daymodal-content">
+        <fieldset id='modal-fieldset'>
+            <div class="week-month">
+                <div class="day-names-month">
+                    <div>
+                        <div class="day-name-month">
+                            <span>Apr</span>
+                            <span>12</span>
+                            <span>Sun</span>
+                        </div>
+                    </div>
+        
+                </div>
+                <div class="week-days-month">
+                    <div class="hours-month">
+                        <div>00:00</div>
+                        <div>01:00</div>
+                        <div>02:00</div>
+                        <div>03:00</div>
+                        <div>04:00</div>
+                        <div>05:00</div>
+                        <div>06:00</div>
+                        <div>07:00</div>
+                        <div>08:00</div>
+                        <div>09:00</div>
+                        <div>10:00</div>
+                        <div>11:00</div>
+                        <div>12:00</div>
+                        <div>13:00</div>
+                        <div>14:00</div>
+                        <div>15:00</div>
+                        <div>16:00</div>
+                        <div>17:00</div>
+                        <div>18:00</div>
+                        <div>19:00</div>
+                        <div>20:00</div>
+                        <div>21:00</div>
+                        <div>22:00</div>
+                        <div>23:00</div>
+                    </div>
+                    <div class="week-columns-month">
+                            <div><span>00:00</span></div><div><span>00:15</span></div><div><span>00:30</span></div><div><span>00:45</span></div><div><span>01:00</span></div><div><span>01:15</span></div><div><span>01:30</span></div><div><span>01:45</span></div><div><span>02:00</span></div><div><span>02:15</span></div><div><span>02:30</span></div><div><span>02:45</span></div><div><span>03:00</span></div><div><span>03:15</span></div><div><span>03:30</span></div><div><span>03:45</span></div><div><span>04:00</span></div><div><span>04:15</span></div><div><span>04:30</span></div><div><span>04:45</span></div><div><span>05:00</span></div><div><span>05:15</span></div><div><span>05:30</span></div><div><span>05:45</span></div><div><span>06:00</span></div><div><span>06:15</span></div><div><span>06:30</span></div><div><span>06:45</span></div><div><span>07:00</span></div><div><span>07:15</span></div><div><span>07:30</span></div><div><span>07:45</span></div><div><span>08:00</span></div><div><span>08:15</span></div><div><span>08:30</span></div><div><span>08:45</span></div><div><span>09:00</span></div><div><span>09:15</span></div><div><span>09:30</span></div><div><span>09:45</span></div><div><span>10:00</span></div><div><span>10:15</span></div><div><span>10:30</span></div><div><span>10:45</span></div><div><span>11:00</span></div><div><span>11:15</span></div><div><span>11:30</span></div><div><span>11:45</span></div><div><span>12:00</span></div><div><span>12:15</span></div><div><span>12:30</span></div><div><span>12:45</span></div><div><span>13:00</span></div><div><span>13:15</span></div><div><span>13:30</span></div><div><span>13:45</span></div><div><span>14:00</span></div><div><span>14:15</span></div><div><span>14:30</span></div><div><span>14:45</span></div><div><span>15:00</span></div><div><span>15:15</span></div><div><span>15:30</span></div><div><span>15:45</span></div><div><span>16:00</span></div><div><span>16:15</span></div><div><span>16:30</span></div><div><span>16:45</span></div><div><span>17:00</span></div><div><span>17:15</span></div><div><span>17:30</span></div><div><span>17:45</span></div><div><span>18:00</span></div><div><span>18:15</span></div><div><span>18:30</span></div><div><span>18:45</span></div><div><span>19:00</span></div><div><span>19:15</span></div><div><span>19:30</span></div><div><span>19:45</span></div><div><span>20:00</span></div><div><span>20:15</span></div><div><span>20:30</span></div><div><span>20:45</span></div><div><span>21:00</span></div><div><span>21:15</span></div><div><span>21:30</span></div><div><span>21:45</span></div><div><span>22:00</span></div><div><span>22:15</span></div><div><span>22:30</span></div><div><span>22:45</span></div><div><span>23:00</span></div><div><span>23:15</span></div><div><span>23:30</span></div><div><span>23:45</span></div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <span class="close-sign close-sign-month">&times;</span>
+        </div>
+    </div>
+    
+</div>
+</div>      
+<!-- </div> -->
+
+<script src="/public/js/time-selection.js"></script>
+
+    
+</body>
+
+</html>

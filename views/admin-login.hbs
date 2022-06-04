@@ -1,0 +1,37 @@
+
+    <script>alert(`{{alert}}`)</script>
+    <div class="login-page">
+        <div id="signinmodal" class="modal-sign">
+
+            <form class="signin" method="POST" action="/admin-login">
+              
+              <fieldset>
+                  <i class="fas fa-sign-in-alt fa-4x" id="sign-in-icon"></i>
+                  <h1>&nbsp;&nbsp;&nbsp;&nbsp;Admin Login</h1> 
+                  <hr>
+        
+                  <div class='inputwi'>
+                      <label for="email-signin"><strong>Username</strong> <br></label>
+                      <input type="text" name="username" id="email-signin" placeholder="Enter e-mail address" required>
+                      <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                      <br> 
+                  </div>
+        
+                  <div class='inputwiPas'>
+                      <label for="password-signin"><strong>Password</strong> <br></label>
+                      <input type="password" name="password" id="password-signin" placeholder="Enter password" required>
+                      <i class="fa fa-eye fa-lg fa-fw" id="togglePasswordSignIn"></i>
+                      <br> 
+                  </div>
+        
+        
+                <br>
+        
+                <button>Log in</button>
+              </fieldset>
+            </form>
+          </div>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/285af68c5a.js" crossorigin="anonymous"></script>
+    <script src='js/signinpsw.js'></script>

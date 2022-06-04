@@ -1,0 +1,159 @@
+.signin h1 {
+    text-align: center;
+    /* margin: auto; */
+}
+
+.signin * {
+    color: black;
+}
+.signin>fieldset {
+    border: 0;
+    /* margin: 1em auto;
+    background-color: white;
+    border-radius: 14px;
+    width: 60%;
+    text-align: center;
+    box-shadow: 20px 20px rgb(150, 66, 27); */
+}
+
+.signin>fieldset>h1 {
+    /* margin-top: 0; */
+    margin-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+.signin input{
+    width: 55%;
+    padding: 0.5em;
+    margin: 1em 0 2em 0;
+    border: none;
+    transition: all 0.1s ease;
+    border-bottom: 3px solid rgb(151, 151, 151) ;
+}
+
+.signin input:hover {
+    /* box-shadow: 1px 1px #EB6E34; */
+}
+
+.signin input::placeholder {
+    font-size: large;
+    transition: none;
+}
+
+.signin input:focus {
+    outline: none; 
+}
+    
+.signin input:focus::placeholder {
+    color: rgba(0, 0, 0, 0.486);
+}
+
+#password {
+    margin: 1em 0 1em 0;
+}
+
+.signin button{
+    display:block;
+    /* width: calc(10% + 7em); */
+    font-weight: bolder;
+    height: 2.2em;
+    font-size:20px;
+    text-align: center;
+    width: 55%;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, red , #EB6E34);
+    background-color: #EB6E34;
+    margin: 1em auto 0.5em auto;
+    cursor: pointer;
+    border: 3px ;
+    padding: 6px;
+    font-family: "Raleway", sans-serif;
+}
+
+
+.signin button:hover{
+    background-color: white;
+    border: 3px solid #EB6E34;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    outline: none;
+}
+
+.signin button:active {
+    box-shadow: 0 0 2px 2px darkcyan;
+    outline: none;
+}
+
+.signin hr {
+    border: 1px solid gray;
+    margin-bottom: 1.5em;
+
+}
+
+h1 i{
+    padding-top:1.5rem;
+}
+
+#forgot-pass {
+    color: #EB6E34;
+    outline-color: #c2480f;
+}
+
+#forgot-pass:hover {
+    color: #eb6e34e7;
+}
+
+#forgot-pass:active {
+    color: #c2480f;
+}
+
+#sign-in-icon {
+    /* display: inline-block; */
+    position: relative;
+    float: right;
+    top: -7px;
+    /* top: 7px; */
+    /* left: 100px; */
+    right: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+    line-height: 14px;
+    width: 100%;
+    display: inline-block;
+    margin-top: 30px;
+    width: 70%;
+}
+.input-wrapper label {
+    text-align: left;
+    line-height: 24px;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 14px;
+    pointer-events: none;
+    transition: transform 100ms ease;
+    font-weight: normal;
+    font-size: large;
+    transform: translateY(-25px);
+}
+.input-wrapper input {
+    width: 100%;
+    line-height: 24px;
+    outline: none;
+    border: unset;
+    border-bottom: 1.5px solid var(--unnamed-color-94a3be);
+    border-bottom: 1.5px solid #94a3be;
+    padding: 5px 0px;
+    position: relative;
+}
+.input-wrapper input:placeholder-shown + label{
+    transform: translateY(0);
+}
+.input-wrapper input:focus + label {
+    font-weight: bold;
+    font-size: small;
+    transform: translateY(-25px);
+}
+

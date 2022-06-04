@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <head>
+        <title> Patras League </title>
+
+        <!-- <link rel="stylesheet" href="/styles/index.css" > -->
+        <link rel="stylesheet" href="/public/css/signed-manager-main.css" >
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.1.1/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Alexandros Mikelis - Stefanos Tsaknakis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+    <body style="background-color:rgb(110, 91, 91)">
+
+      <div class="navbar">
+        <div id="mySidepanel" class="sidepanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#">MATCHES</a>
+          <a href="#">TEAMS</a>
+          <a href="#">SCORES</a>
+          <a href="#">STATISTICS</a>
+          <a href="#">PLAYERS</a>
+        </div>
+        <button id="mobile-nav-open" class="header-icon" onclick="openNav()">
+          <img id="menu-svg" src="/public/images/menu_icon.svg">
+        </button>  
+        <script>
+          function openNav() {
+           document.getElementById("mySidepanel").style.width = "250px";
+         }
+         function closeNav() {
+           document.getElementById("mySidepanel").style.width = "0";
+         }
+         </script> 
+
+          <!-- <div class="navbar"> -->
+                <div class="navbar-logo">
+                    <img src="/public/images/Logo@2x.png" alt="" width="59" height="59">
+                    <a href="#home" class="nav-item nav-button nav-wide"> Patras League </a>
+                </div>
+                
+                <!-- <div class="nav-center-left">
+                    <div class="navlink"><a class="matches" href="#matches"><span><i class="fa fa-futbol-o" aria-hidden="true"></i> MATCHES</span></a></div>
+                    <div class="navlink"><a href="#teams"><i class="fa fa-users" aria-hidden="true"></i> TEAMS</a></div>
+                    <div class="navlink"><a href="#scores"><i class="fa fa-th"></i> SCORES</a></div>
+                    <div class="navlink"><a href="#statistics"><i class="fa fa-bar-chart" aria-hidden="true"></i> STATISTICS</a></div>
+                    <div class="navlink"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> PLAYERS</a></div>
+                </div> -->
+                <div class="nav-right">
+                  <ul>
+                    <li>
+                      <button class="sign-in">
+                        <a href="/public/html/team-layout-management.html">
+                            <i class="fa-solid fa-people-group fa-2x"></i>
+                          <p><strong>Team Layout</strong></p> 
+                        </a>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="sign-in" id="signinbtn">
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="50" height="50" 
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" 
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                            <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                            </svg>
+                          <p><strong>Log out</strong></p>
+                        </a>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+        
+
+          <p style="font-size:xxx-large; text-align: center;">
+            <i class="fa-solid fa-circle-exclamation"></i>Notifications
+          </p>
+          <div style="text-align:center; font-weight:bolder; font-size:large">Bostons invited you to a scrimmage<br>
+          Date: 02/20/2022 Time: 13:00-18:00<br>
+        <div style="display:flex; justify-content:center; gap:3em"><p>Accept</p><p>Deny</p></div>
+    </body>
+</html>

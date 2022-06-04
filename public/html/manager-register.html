@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+    <head>
+        <title> Patras League </title>
+
+        <link rel="stylesheet" href="/public/css/modal.css" >
+        <link rel="stylesheet" href="/public/css/loginstyle.css" >
+        <link rel="stylesheet" href="/public/css/index.css" >
+        <link rel="stylesheet" href="/public/css/manager-register.css" >
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.1.1/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Alexandros Mikelis - Stefanos Tsaknakis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+    <body>
+        <div class="navbar">
+                <div class="navbar-logo">
+                    <img src="/public/images/Logo@2x.png" alt="" width="59" height="59">
+                    <a href="#home" class="nav-item nav-button nav-wide"> Patras League </a>
+                </div>
+                
+                <div class="nav-center-left">
+                    <div class="navlink"><a href="matches.html"><i class="fa fa-futbol-o" aria-hidden="true"></i> MATCHES</a></div>
+                    <div class="navlink"><a href="#teams"><i class="fa fa-users" aria-hidden="true"></i> TEAMS</a></div>
+                    <div class="navlink"><a href="#scores"><i class="fa fa-th"></i> SCORES</a></div>
+                    <div class="navlink"><a href="#statistics"><i class="fa fa-bar-chart" aria-hidden="true"></i> STATISTICS</a></div>
+                    <div class="navlink"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> PLAYERS</a></div>
+                </div>
+                <div class="nav-right">
+                  <ul>
+                    <li>
+                      <button class="sign-in">
+                        <a href="/public/html/registration-page.html">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ball-football"
+                          width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" 
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                          <circle cx="12" cy="12" r="9" />
+                          <path d="M12 7l4.76 3.45l-1.76 5.55h-6l-1.76 -5.55z" />
+                          <path d="M12 7v-4m3 13l2.5 3m-.74 -8.55l3.74 -1.45m-11.44 7.05l-2.56 2.95m.74 -8.55l-3.74 -1.45" />
+                          </svg>
+                          <p><strong>Sign Up</strong></p>
+                        </a>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="sign-in" id="signinbtn">
+                        <a>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login" width="50"
+                          height="50" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path>
+                          <path d="M20 12h-13l3 -3m0 6l-3 -3"></path>
+                          </svg>
+                          <p><strong>Log in</strong></p>
+                        </a>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <!-- <div class="nav-right">
+                    <img src="/images/clipart2027230.png" height="40">
+                    <a href="#signin" class="sign-in">Sign Up</a>
+                    <button class="sign-in" id="signinbtn">Log In</button>
+                </div> -->
+        </div>
+        <script src="/public/js/navbar.js"></script>
+        <div id="signinmodal" class="modal-sign"></div>
+
+      <script src="/public/js/modalView.js"></script>
+      <script src="/public/js/modalService.js"></script>
+        <!-- <div id="signinmodal" class="modal-sign">
+          <form class="signin modal-sign-content" method="POST" action="/login">
+            <span class="close-sign">&times;</span>
+            <fieldset>
+                <h1>
+                  <img src="/public/images/Logo@2x.png" alt="" width="59" height="59">
+                  Log in
+                  <i class="fas fa-sign-in-alt fa-2x" id="sign-in-icon"></i>
+                </h1> 
+      
+                <div class='inputwiSign'>
+                    <label for="email-signin"><strong>Email</strong> <br></label>
+                    <input type="email" name="UserEmail" id="email-signin" placeholder="" required>
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                    <br> 
+                </div>
+      
+                <div class='inputwiPasSign'>
+                    <label for="password-signin"><strong>Password</strong> <br></label>
+                    <input type="password" name="UserPass" id="password-signin" placeholder="" required>
+                    <i class="fa fa-unlock-alt fa-lg fa-fw" id="togglePasswordSignIn"></i>
+                    <br> 
+                </div>
+        
+              <a href="" id='forgot-pass'><u>Forgot Password ?</u></a>
+              <br>
+      
+              <button>Log In</button>
+            </fieldset>
+          </form>
+        </div> -->
+
+    <!-- <script>
+      document.getElementById("signinmodal").style.display = "block";
+    </script> -->
+
+    <script src="/public/js/loginmodal.js"></script>
+    
+        <form  name="signupform" class="signup" method="POST" action="/signup">
+            <div class="signflex">
+                <div>
+                    <h1>Register as Team Manager</h1>
+                    <h5>Please fill out the form below, to proceed with the registration</h5>
+                </div>
+                <i class="fas fa-user-plus fa-7x" id="user-plus-icon"></i>
+                
+            </div>
+            <label for="signgrid"><h2>Personal Info</h2>
+            <div class="signgrid" id="signgrid">
+                <div class='inputwi'>
+                    <label class="input-label" for="firstname-signup"><strong>First Name</strong> <br></label>
+                    <input type="text" name="FirstName" id="firstname-signup" placeholder="First Name" required>
+                    <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                </div>
+                
+
+                <div class='inputwi'>
+                    <label class="input-label" for="lastname-signup"><strong>Last Name</strong> <br></label>
+                    <input type="text" name="LastName" id="lastname-signup" placeholder="Last Name" required>
+                    <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                </div>
+
+                <div class='inputwi'>
+                    <label class="input-label" for="email-signup"><strong>E-mail</strong> <br></label>
+                    <input type="email" name="UserEmail" id="email-signup" placeholder="Enter Email" required>
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                </div>
+      
+                <div class='inputwiPas'>
+                    <label class="input-label" for="password-signup"><strong>Password</strong> <br></label>
+                    <input type="password" name="UserPass" id="password-signup" placeholder="Enter Password" required>
+                    <i class="fa fa-eye fa-lg fa-fw" id="togglePassword"></i>
+                </div>
+      
+                <div class='inputwiPas'>
+                    <label class="input-label" for="password2-signup"><strong>Password confirmation</strong> <br></label>
+                    <input type="password" name="UserPass2" id="password2-signup" placeholder="Reenter Password" required>
+                    <i class="fa fa-eye fa-lg fa-fw" id="togglePassword2"></i>
+                </div>
+
+                <label for="dum"><h2>Communication</h2></label>
+                <div id="dum" hidden></div>
+                <div class='inputwi'>
+                    <label class="input-label" for="email2-signup"><strong>E-mail</strong> <br></label>
+                    <input type="email" name="UserEmail2" id="email2-signup" placeholder="Enter the most frequetly checked e-mail" >
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                </div>
+
+                <div class='inputwi phones' id="phones">
+                    <label class="input-label" for="email-signup"><strong>Phone number</strong></label>
+                    <input type="text" name="Phone1" id="Phone1" placeholder="Enter phone number" required>
+                    <i class="fa fa-phone " aria-hidden="true"></i>
+                    <button class="add-phone" id="add-phone">Add Phone Number</button>
+                </div>
+
+                <div class='inputwi'>
+                    <label class="input-label" for="address-signup"><strong>Street Address</strong></label>
+                    <input type="text" name="Address" id="address-signup" placeholder="Enter Street Address">
+                    <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
+                </div>
+
+                <div class='inputwi'>
+                    <label class="input-label" for="zipcode-signup"><strong>ZIP code</strong></label>
+                    <input type="text" name="ZipCode" id="zipcode-signup" placeholder="Enter ZIP code">
+                    <i class="fa-solid fa-envelopes-bulk"></i>
+                </div>
+                
+                <label for="label-ground" class="team-label"><h2>Team/Organization Info</h2></label>
+                <div id="label-ground"></div>
+                <div class='inputwi inputwiOrg'>
+                    <label class="input-label" for="teamname-signup"><strong>Official Team Name</strong></label>
+                    <input type="text" name="TeamName" id="teamname-signup" placeholder="Enter your Team's Name" required>
+                    <i class="fa-solid fa-people-line"></i>
+                </div> 
+
+                <div class='inputwi inputwiOrg'>
+                    <label class="input-label" for="org-signup"><strong>Organization Name</strong></label>
+                    <input type="text" name="OrgName" id="org-signup" placeholder="Enter Organization Name" required>
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class='inputwi inputwiOrg'>
+                    <label class="input-label" for="district-signup"><strong>District</strong></label>
+                    <input type="text" name="District" id="district-signup" placeholder="Enter the district your team is representing">
+                    <i class="fa-solid fa-city"></i>
+                </div>
+            </div>
+        </label>
+        <br><br><br><br><br><br><br>
+            <button type="submit">
+              Register
+            </button>
+            <br><br><br><br><br>
+
+            
+        </form>
+    <script src="/public/js/add-phone.js"></script>
+    </body>
+</html>

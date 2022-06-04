@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <head>
+        <title> Patras League </title>
+
+        {{!-- <link rel="stylesheet" href="/css/signed-manager-main.css" > --}}
+        {{!-- <link rel="stylesheet" href="/css/team-layout-management.css" >
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.1.1/css/all.css">
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+        {{!-- <link rel="stylesheet" href="/css/login-stlye.css" > --}}
+        {{!-- <link rel="stylesheet" href="/css/time-selection.css"> --}}
+        {{!-- <link rel="stylesheet" href="/css/signed-manager-main.css" > --}}
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.1.1/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.1.1/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black Ops One">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Alexandros Mikelis - Stefanos Tsaknakis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {{#each style}}
+            <link rel="stylesheet" href="/css/{{ this }}.css">
+        {{/each}}
+
+    </head>
+
+    <body">
+       {{!-- {{#if manager}}  
+         <div class="navb"></div>
+      <script src="js/manager-nav.js"></script>
+      {{else}}
+      <script src="/public/js/navbar.js"></script> --}}
+      
+      {{#if aftersignup}}
+      
+        <div id="alert2" class="modal-sign2" style="display: block;">
+            <div class="alert-content2 modal-sign-content2">
+                <span id="close-sign-alert-index2" class="close-sign-alert2">&times;</span>
+                <fieldset class="fldset">
+                {{#if mainpage}}
+                    {{> loggedinPartial partialContext}}
+                {{/if}}
+                    <h2>You can now sign-in, create your team, as well as schedule scrimmages and practises in our
+                        our facilities
+                    </h2>
+                
+                    <button id="alert-btn-index1">OΚ</button>
+                </fieldset>
+            </div>
+        </div>
+        <script>
+            const alertbtnclose = document.querySelector("#alert-btn-index1");
+            alertbtnclose.onclick = () => {
+            document.querySelector("#alert2").style.display = "none";}
+        </script>
+     {{/if}}
+
+     
+      {{!-- <div class="navbar"></div>
+
+      <div id="signinmodal" class="modal-sign"></div>
+
+      <script src="/public/js/modalView.js"></script>
+      <script src="/public/js/modalService.js"></script> --}}
+    {{!-- {{/if}} --}}
+    {{#if notadmin}}
+        {{#if loggedin}}
+        <div class="navb"></div>
+        <script src="/js/manager-nav.js"></script>
+        
+
+        {{else}}
+        <div class="navbar"></div>
+            <script src="/js/navbar.js"></script>
+        {{!-- {{else}}
+        {{> notLoggedinPartial partialContext}}  --}}
+
+        {{/if}}
+    {{/if}}
+
+    
+
+    {{{body}}}
+  
+    </body>
+</html>
