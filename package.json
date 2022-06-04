@@ -17,15 +17,14 @@
     "serve-favicon": "^2.5.0"
   },
   "name": "webprogrammingproject",
-  "description": "",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-		"node": "16.x"
-	},
+    "node": "16.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stefanostsk/Web_Programming_project.git"
@@ -33,9 +32,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://github.com/stefanostsk/Web_Programming_project#readme",
+  "devDependencies": {},
   "bugs": {
-    "ul": ""
+    "url": "https://github.com/stefanostsk/Web_Programming_project/issues"
   },
-  "homepage": "",
-  "devDependencies": {}
+  "description": ""
 }
