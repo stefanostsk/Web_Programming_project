@@ -48,7 +48,11 @@ router.get('/admin', patrasleagueController.checkAdminAuthenticated, (req, res) 
 router.get('/admin-requests', patrasleagueController.checkAdminAuthenticated, (req, res) => res.render('admin-requests', {style: ["signed-manager-main","admin-requests"]}))
 router.get('/draw' ,patrasleagueController.getTeams, (req, res) => res.render('draw', {style: ["draw","signed-manager-main"]}))
 router.post('/draw' ,patrasleagueController.afterDrawGames, (req, res) => res.render('draw', {style: ["draw","signed-manager-main"]}))
-// router.get('/draw/sucess' , (req, res) => res.render('draw', {standingssubmited:true,style: ["draw","signed-manager-main","alert2"]}))
+router.get('/admin-update' ,patrasleagueController.showGames, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
+router.get('/admin-update/playins-reset' ,patrasleagueController.resetPlayins,patrasleagueController.showGames, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
 
+router.post('/game-update' ,patrasleagueController.updateGame, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
+
+// router.get('/draw/sucess' , (req, res) => res.render('draw', {standingssubmited:true,style: ["draw","signed-manager-main","alert2"]}))
 //patrasleagueController.checkAdminAuthenticated
 module.exports = router;

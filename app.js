@@ -17,8 +17,8 @@ const router = express.Router({caseSensitive:true});
 
 const MemoryStore = require('memorystore')(session)
 
-// app.use(express.static('public'))
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'))
+// app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('hbs', engine({ extname: '.hbs'}));
 app.set('view engine', 'hbs');

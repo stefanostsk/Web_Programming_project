@@ -8,6 +8,7 @@ const crypto = require("crypto");
 const dotenv = require('dotenv');
 const { read } = require('fs');
 const { resolve } = require('path');
+const { isContext } = require('vm');
 
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
@@ -236,8 +237,15 @@ exports.createInitBracket = (req,res) => {
                 console.log("popped",finalarr.pop())
             }
         }
-        console.log(finalarr)
-        res.render('matches', {notadmin:false, game:finalarr,lowerteam:lowerteam,lowerteams:lowerteams,lowerteamss:lowerteamss, style: ["matches","signed-manager-main"]})
+
+        let datearr = []
+        let gamee = []
+        gamee = result.rows
+        gamee.forEach((el,index) => {
+            el.GameDate = String(el.GameDate).slice(0,24)
+        })
+        // console.log(finalarr)
+        res.render('matches', {notadmin:false, game:finalarr,lowerteam:lowerteam,lowerteams:lowerteams,lowerteamss:lowerteamss,gamee:gamee,style: ["matches","signed-manager-main"]})
     })
 }
 
@@ -258,7 +266,6 @@ exports.showallReservations = (req,res) => {
         res.render('time-selection',{options:result.rows,date:date,notadmin:true,loggedin:true , style: ["signed-manager-main","time-selection"]})
     })
 }
-
 
 exports.getTeams = (req,res) => {
     model.getTeams ((err,result) => {
@@ -289,10 +296,35 @@ exports.getStats  =(req,res) => {
 }
 
 
+exports.resetPlayins = (req,res) => {
+    model.resetPlayins(req, (err,result) => {
+        if (err) {
+            res.send(err);
+        }
+        res.render('admin-update', {style: ["admin-update","signed-manager-main"]})
+    })
+}
+
+exports.showGames = (req,res) => {
+    model.showGames(req, (err,result) => {
+        if (err) {
+            res.send(err);
+        }
+        // console.log(result.rows)
+        res.render('admin-update', {gameinfo: result.rows ,style: ["admin-update","signed-manager-main"]})
+    })
+}
 
 
-
-
+exports.updateGame = (req,res) => {
+    console.log("BODY",req.body.GameID,req.body.Home1)
+    model.updateGame(req, (err,result) => {
+        if (err) {
+            res.send(err);
+        }
+        res.render('admin-update', {style: ["admin-update","signed-manager-main"]})
+    })
+}
 
 
 

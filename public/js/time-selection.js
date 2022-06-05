@@ -261,11 +261,11 @@ function createOption (e){
         newOption.style.gridColumn = e.style.gridColumn;
 
 
-        const meetingDate = selDateMonth
+        const thedate = selDateMonth
 
-        newOption.dataset.date = meetingDate;
+        newOption.dataset.date = thedate;
 
-        newOption.dataset.shortDate = meetingDate.toLocaleString("en-US", {day: "2-digit", month: "2-digit", year: "numeric"});
+        newOption.dataset.shortDate = thedate.toLocaleString("en-US", {day: "2-digit", month: "2-digit", year: "numeric"});
         newOption.dataset.startTime = startTime;
         newOption.dataset.endTime = endTime;
         newOption.dataset.height = defaultHeightInt;

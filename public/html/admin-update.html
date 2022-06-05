@@ -1,15 +1,32 @@
+<!DOCTYPE html>
+    <head>
+        <title> Patras League </title>
+
+        <!-- <link rel="stylesheet" href="/styles/index.css" > -->
+        <link rel="stylesheet" href="/public/css/admin.css" >
+        <link rel="stylesheet" href="/public/css/signed-manager-main.css" >
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.1.1/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Alexandros Mikelis - Stefanos Tsaknakis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+    <body>
 
       <div class="navbar">
         <div id="mySidepanel" class="sidepanel">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="/matches">MATCHES</a>
-          <a href="/teams">TEAMS</a>
-          <a href="/scores">SCORES</a>
-          <a href="/statistics">STATISTICS</a>
-          <a href="/players">PLAYERS</a>
+          <a href="#">MATCHES</a>
+          <a href="#">TEAMS</a>
+          <a href="#">SCORES</a>
+          <a href="#">STATISTICS</a>
+          <a href="#">PLAYERS</a>
         </div>
         <button id="mobile-nav-open" class="header-icon" onclick="openNav()">
-          <img id="menu-svg" src="/images/menu_icon.svg">
+          <img id="menu-svg" src="/public/images/menu_icon.svg">
         </button>  
         <script>
           function openNav() {
@@ -22,7 +39,7 @@
 
           <!-- <div class="navbar"> -->
                 <div class="navbar-logo">
-                    <img src="/images/Logo@2x.png" alt="" width="59" height="59">
+                    <img src="/public/images/Logo@2x.png" alt="" width="59" height="59">
                     <a href="#home" class="nav-item nav-button nav-wide"> Patras League </a>
                 </div>
                 
@@ -37,7 +54,7 @@
                   <ul>
                     <li>
                       <button class="sign-in" id="signinbtn">
-                        <a href="/logout">
+                        <a>
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="50" height="50" 
                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" 
                             stroke-linecap="round" stroke-linejoin="round">
@@ -54,9 +71,14 @@
               </div>
               <div class="side-nav">
 
-                <button class="admin-btn" onclick=" location.href='admin-requests' ">Manager Requests </button>      
-                <button class="admin-btn" onclick=" location.href='admin-update' ">Update Match </button>
-                <button class="admin-btn" onclick=" location.href='draw' ">Draw Basket / Standings </button>
-        
+
+                <button class="admin-btn" onclick=" location.href='/public/html/bracket-reset' ">Reset Play-ins Matches/Bracket</button>
+<!-- 
+                <button class="admin-btn" onclick=" location.href='/public/html/admin-requests' ">Manager Requests </button>      
+                <button class="admin-btn" onclick=" location.href='/public/html/update-game.html' ">Update Match </button>
+                <button class="admin-btn" onclick=" location.href='/public/html/draw.html' ">Draw Basket / Standings </button>
+         -->
             </div>
-  
+        
+    </body>
+</html>

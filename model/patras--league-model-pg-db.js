@@ -399,6 +399,70 @@ exports.getTeams = function(callback) {
 }
 	
 
+exports.resetPlayins = function(req,callback){
+
+	let currYear = new Date().getUTCFullYear()
+
+	const query = {
+		text: `DELETE FROM public."Game"
+		WHERE "GameDate"> '${currYear}-07-01 00:00:00' AND "GameDate"< '${currYear+1}-02-01 00:00:00';`,
+		values: []
+	}
+	  sql.query(query, (err, res) => {
+		if (err) {
+			console.log(err.stack)
+			callback(err.stack)
+		}
+		else {
+			callback(null, res)
+
+		}
+	})
+}
+
+
+exports.showGames = function(req,callback) {
+
+	let currYear = new Date().getUTCFullYear()
+
+	const query = {
+		text: `SELECT * 
+		FROM public."Game"
+		WHERE "GameDate"> '${currYear}-07-01 00:00:00';`,
+		values: []
+	}
+	sql.query(query, (err, res) => {
+		if (err) {
+			console.log(err.stack)
+			callback(err.stack)
+		}
+		else {
+			callback(null, res)
+		}
+	})
+}
+
+
+exports.updateGame = function(req,callback) {
+	
+	// const query = {
+	// 	text: `UPDATE "Participate" 
+	// 	SET "GameID"=$1,"PlayerID"=$2;`,
+	// 	values: [gameid,playerid]
+	// }
+	// sql.query(query, (err, res) => {
+	// 	if (err) {
+	// 		console.log(err.stack)
+	// 		callback(err.stack)
+	// 	}
+	// 	else {
+	// 		callback(null, res)
+	// 	}
+	// })
+	callback(null,null)
+}
+
+
 
 
 function getUserNames(username, callback) {
