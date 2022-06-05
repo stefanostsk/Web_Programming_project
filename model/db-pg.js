@@ -16,6 +16,23 @@ dotenv.config();
 // const pool = new pg.Pool();  // to connect to the local database
 
 
+//################################################
+// const { Client } = require('pg');
+
+// const client = new Client({
+//     user: 'postgres',
+//     host: 'localhost',
+//     database: 'patras-league',
+//     password: '',
+//     port: 5432
+// });
+
+// client.connect((err) => {
+//     if (err)
+//         throw err;
+//     else console.log("connected to db")
+// });
+
 
 
 'use strict';
