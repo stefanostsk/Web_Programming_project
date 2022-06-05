@@ -139,6 +139,70 @@ exports.showMyTeam = function(req,callback){
 	
 }
 
+function showHomePlayers(gameid,callback) {
+	let homeplayers = []
+	const query = {
+		text: `SELECT "FullName","GameID",public."Player"."PlayerID" FROM public."Player" JOIN public."Team"
+		ON public."Player"."TeamID"= public."Team"."TeamID" JOIN public."Manager"
+		ON public."Manager"."MngrID"=public."Team"."ManagerID" JOIN public."Game"
+		ON "TeamName"="HomeTeam"
+		WHERE "GameID" = $1;`,
+		values: [gameid]
+	}
+
+	sql.query(query, (err, res) => {
+		if (err) {
+			console.log(err.stack)
+			callback(err.stack)
+		}
+		else {
+			callback(null, res)
+		}
+	})
+}
+
+
+
+exports.showPlayersforUpdate = function(gameid,callback){
+
+	let homeplayers = []
+
+	new Promise( (resolve) => {
+		showHomePlayers(gameid, (err,result) => {
+			if (err) {
+				callback(err);
+			}
+			result.rows.forEach((el) => homeplayers.push(el))
+			// console.log(homeplayers)
+
+			resolve(gameid)
+		})
+	})
+	.then( (gameid) => {
+		let awayplayers = []
+		const query = {
+			text: `SELECT "FullName","GameID",public."Player"."PlayerID" FROM public."Player" JOIN public."Team"
+			ON public."Player"."TeamID"= public."Team"."TeamID" JOIN public."Manager"
+			ON public."Manager"."MngrID"=public."Team"."ManagerID" JOIN public."Game"
+			ON "TeamName"="AwayTeam"
+			WHERE "GameID" = $1;`,
+			values: [gameid]
+		}
+
+		sql.query(query, (err, res) => {
+			if (err) {
+				console.log(err.stack)
+				callback(err.stack)
+			}
+			else {
+				// console.log(homeplayers,res)
+				callback(null, homeplayers, res)
+			}
+		})
+	})
+	
+	
+}
 
 exports.doinsert = (req,players,callback) => { 
 	managerid = req.session.loggedUserId
@@ -351,9 +415,10 @@ function getActionsfromTPNames(teamplayerNames,callback) {
 		let query;
 		query = {
 			text: `SELECT SUM("Passes") AS "Passes",SUM("Fouls") AS "Fouls",SUM("Assists") AS "Assists",SUM("Goals") AS "Goals",
-			SUM("YellowCards") AS "YellowCards" FROM public."Actions"
-			WHERE "PlayerID"=$1
-			GROUP BY "PlayerID";`,
+			SUM("YellowCards") AS "YellowCards",COUNT(*) as "GamesPlayed" FROM public."Actions" JOIN "Participate"
+			ON public."Actions"."PlayerID" = public."Participate"."PlayerID"
+			WHERE public."Participate"."PlayerID"=$1
+			GROUP BY public."Participate"."PlayerID";`,
 			values: [el.PlayerID]
 		}
 		promiseList.push(
@@ -397,7 +462,6 @@ exports.getTeams = function(callback) {
 		}
 	})
 }
-	
 
 exports.resetPlayins = function(req,callback){
 
@@ -443,24 +507,26 @@ exports.showGames = function(req,callback) {
 }
 
 
-exports.updateGame = function(req,callback) {
-	
-	// const query = {
-	// 	text: `UPDATE "Participate" 
-	// 	SET "GameID"=$1,"PlayerID"=$2;`,
-	// 	values: [gameid,playerid]
-	// }
-	// sql.query(query, (err, res) => {
-	// 	if (err) {
-	// 		console.log(err.stack)
-	// 		callback(err.stack)
-	// 	}
-	// 	else {
-	// 		callback(null, res)
-	// 	}
-	// })
-	callback(null,null)
+exports.updateGame = function(gameid,homeplayersid,awayplayersid,callback) {
+
+	let promiseList = []
+	let allplayersid = [...homeplayersid,...awayplayersid]
+
+	allplayersid.forEach( (el) => {
+		const query = {
+			text: `INSERT INTO public."Participate" ("GameID","PlayerID")
+			VALUES ($1,$2);`,
+			values: [gameid,el]
+		}
+		promiseList.push(
+			sql.query(query)
+		)
+	});
+	Promise.all(promiseList)
+		.then(callback(null))
+		.catch(e => callback(e))
 }
+
 
 
 

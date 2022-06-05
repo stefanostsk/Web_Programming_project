@@ -70,37 +70,89 @@
                     {{!-- <button class="admin-btn" style="visibility:hidden" onclick=" location.href='/admin-update/game-update' ">Update Game</button>
 
                 </div> --}}
-
+<div class="update-div">
             <div class="player-div">
                  
-                <form class="mp-form" method="POST" action="/game-update"> 
+                <form class="mp-form" method="POST" action="/expand-teams"> 
                     <select class="selectd" name="GameID" required style="font-size:x-large; border :4px solid gray; border-radius:8px; width:10em;">
                         <option value="" disabled selected> Select Game</option>
                     {{#each gameinfo}}
                         <option value="{{this.GameID}}">{{this.GameID}} {{this.HomeTeam}} vs {{this.AwayTeam}} </option>
                     {{/each}}
                     </select>
+                 
+                    <button class="admin-btn aread" >Expand Teams</button>
+{{!-- onclick=" location.href='/admin-update/expand-teams' " --}}
 
+                </form>
+
+                <form class="mp-form" method="POST" action="/update-game"> 
                     <div class="players-home">
+                      {{#each homeplayer}}
+                        <input style="display:none" name="GameID" value="{{this.GameID}}">
+                        <input style="display:none" name="PlayerHomeID" value="{{this.PlayerID}}">
 
                         <div class="mp-form">
-                        <input type="text" name="Home1" placeholder="Player Home" >
+                        <input type="text" name="Home{{@index}}Player" placeholder="Player Home" value="{{this.FullName}}">
                         </div>
-
+                      {{/each}}
                     </div>
 
                     <div class="players-away">
+                      {{#each awayplayer}}
+                        <input style="display:none" name="GameID" value="{{this.GameID}}">
+                        <input style="display:none" name="PlayerAwayID" value="{{this.PlayerID}}">
 
                         <div class="mp-form">
-                        <input type="text" name="Away1" placeholder="Player Away" >
+                        <input type="text" name="Away{{@index}}Player" placeholder="Player Away" value="{{this.FullName}}" >
                         </div>
-
+                      {{/each}}
                     </div>
-
-                    <button class="admin-btn areac" onclick=" location.href='/admin-update/game-update' ">Update Game</button>
-
+                    <button class="admin-btn areac" >Update Game</button>
                 </form>
             </div>
+
+            <div class="player-div">
+                 
+                <form class="mp-form" method="POST" action="/expand-teams"> 
+                    <select class="selectd" name="GameID" required style="font-size:x-large; border :4px solid gray; border-radius:8px; width:10em;">
+                        <option value="" disabled selected> Select Game</option>
+                    {{#each gameinfo}}
+                        <option value="{{this.GameID}}">{{this.GameID}} {{this.HomeTeam}} vs {{this.AwayTeam}} </option>
+                    {{/each}}
+                    </select>
+                 
+                    <button class="admin-btn aread" >Expand Teams</button>
+{{!-- onclick=" location.href='/admin-update/expand-teams' " --}}
+
+                </form>
+
+                <form class="mp-form" method="POST" action="/update-game"> 
+                    <div class="players-home">
+                      {{#each homeplayer}}
+                        <input style="display:none" name="GameID" value="{{this.GameID}}">
+                        <input style="display:none" name="PlayerHomeID" value="{{this.PlayerID}}">
+
+                        <div class="mp-form">
+                        <input type="text" name="Home{{@index}}Player" placeholder="Player Home" value="{{this.FullName}}">
+                        </div>
+                      {{/each}}
+                    </div>
+
+                    <div class="players-away">
+                      {{#each awayplayer}}
+                        <input style="display:none" name="GameID" value="{{this.GameID}}">
+                        <input style="display:none" name="PlayerAwayID" value="{{this.PlayerID}}">
+
+                        <div class="mp-form">
+                        <input type="text" name="Away{{@index}}Player" placeholder="Player Away" value="{{this.FullName}}" >
+                        </div>
+                      {{/each}}
+                    </div>
+                    <button class="admin-btn areac" >Update Game</button>
+                </form>
+            </div>
+</div>
 
        
        

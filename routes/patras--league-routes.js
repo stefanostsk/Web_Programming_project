@@ -30,6 +30,9 @@ router.post('/submit1-status',patrasleagueController.doinsert)
 
 router.get('/matches' ,patrasleagueController.createInitBracket)
 
+router.get('/scores' ,(req, res) => res.render('scores',{ notadmin:true,style:["modal","loginstyle","index","scores"]}))
+router.get('/teams',patrasleagueController.getTeamsforTeams)
+router.get('/players' ,(req, res) => res.render('players',{ notadmin:true,style:["modal","loginstyle","index","players"]}))
 
 router.post('/login', patrasleagueController.doLogin);
 router.post('/signup', patrasleagueController.doRegister);
@@ -51,7 +54,9 @@ router.post('/draw' ,patrasleagueController.afterDrawGames, (req, res) => res.re
 router.get('/admin-update' ,patrasleagueController.showGames, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
 router.get('/admin-update/playins-reset' ,patrasleagueController.resetPlayins,patrasleagueController.showGames, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
 
-router.post('/game-update' ,patrasleagueController.updateGame, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
+router.post('/expand-teams' ,patrasleagueController.showPlayersforUpdate)
+// , (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]})
+router.post('/update-game' ,patrasleagueController.updateGame, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
 
 // router.get('/draw/sucess' , (req, res) => res.render('draw', {standingssubmited:true,style: ["draw","signed-manager-main","alert2"]}))
 //patrasleagueController.checkAdminAuthenticated

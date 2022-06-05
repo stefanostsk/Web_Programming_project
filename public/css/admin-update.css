@@ -100,6 +100,7 @@ div.mp-form {
     grid-template-columns: 1fr;
     grid-template-areas: "x x"
                         "a b"
+                        "d d"
                         "c c";
     width: 32em;
 }
@@ -121,7 +122,19 @@ div.mp-form {
     width: 10em;
     /* margin-right:33%; */
 }
+.aread{
+    grid-area: d;
+    width: 7em;
+    height: 2em;
+    background-color: rgb(228, 121, 39);
+    color:rgb(5, 255, 34);
+    /* margin-right:33%; */
+}
 select{
     grid-area:x;
     justify-self: center;
+}
+
+.update-div{
+    margin-right:10%;
 }

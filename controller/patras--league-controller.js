@@ -276,6 +276,36 @@ exports.getTeams = (req,res) => {
     })
 }
 
+exports.getTeamsforTeams = (req,res) => {
+    model.getTeams ((err,result) => {
+        if (err) {
+            res.send(err);
+        }
+        res.render('teams',{ team:result.rows,notadmin:true,style:["modal","loginstyle","index","teams"]})
+    })
+}
+
+
+exports.showPlayersforUpdate = (req,res) => {
+    let gameid = req.body.GameID
+    model.showPlayersforUpdate (gameid,(err, homeplayers, awayplayers) => {
+        if (err) {
+            res.send(err);
+        }
+        // console.log(homeplayers)
+        res.render('admin-update',{ homeplayer:homeplayers, awayplayer:awayplayers.rows ,notadmin:false,style:["admin-update","signed-manager-main"]})
+    })
+}
+
+exports.updateGame = (req,res) => {
+
+    model.updateGame(req.body.GameID[0],req.body.PlayerHomeID,req.body.PlayerAwayID,(err,result) => {
+        if (err) {
+            res.send(err);
+        }
+        res.render('admin-update', {notadmin:false, style: ["admin-update","signed-manager-main"]})
+    })
+}
 
 
 exports.getStats  =(req,res) => {
@@ -316,15 +346,6 @@ exports.showGames = (req,res) => {
 }
 
 
-exports.updateGame = (req,res) => {
-    console.log("BODY",req.body.GameID,req.body.Home1)
-    model.updateGame(req, (err,result) => {
-        if (err) {
-            res.send(err);
-        }
-        res.render('admin-update', {style: ["admin-update","signed-manager-main"]})
-    })
-}
 
 
 
