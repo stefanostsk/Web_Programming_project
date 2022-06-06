@@ -325,7 +325,7 @@ exports.afterDrawGames = function(bodyData,callback) {
 			.catch(e => callback(e))
 		}
 
-
+	
 
 exports.createInitBracket = function(req,callback) {
 	let currYear = new Date().getUTCFullYear()
@@ -349,8 +349,27 @@ exports.createInitBracket = function(req,callback) {
 }
 
 
+exports.showScores = function (callback) {
 
+	let currYear = new Date().getUTCFullYear()
 
+	const query = {
+		text: `SELECT SUM("Goals") AS Score FROM public."Actions" JOIN public."Game"
+		ON public."Actions"."GameID"=public."Game"."GameID"
+		WHERE "GameDate"> '${currYear}-07-01 00:00:00' AND "GameDate"< '${currYear+1}-02-01 00:00:00';`,
+		values: []
+	}
+	sql.query(query, (err, res) => {
+		if (err) {
+			console.log(err.stack)
+			callback(err.stack)
+		}
+		else {
+			console.log(res)
+			callback(null, res)
+		}
+	})
+}
 
 
 exports.showallReservations = function(callback) {
@@ -475,8 +494,7 @@ exports.resetPlayins = function(req,callback){
 	const query = {
 		// WHERE "GameID" NOT IN (SELECT "GameID" FROM public."Participate") AND
 		text: `DELETE FROM public."Game"
-		WHERE "GameID" NOT IN (SELECT "GameID" FROM public."Participate") AND
-		"GameDate"> '${currYear}-07-01 00:00:00' AND"GameDate"<'${currYear+1}-02-01 00:00:00';`,
+		WHERE "GameDate"> '${currYear}-07-01 00:00:00' AND"GameDate"<'${currYear+1}-02-01 00:00:00';`,
 		values: []
 	}
 	  sql.query(query, (err, res) => {
