@@ -247,7 +247,12 @@ exports.createInitBracket = (req,res) => {
             el.GameDate = String(el.GameDate).slice(0,24)
         })
         // console.log(finalarr)
-        res.render('matches', {notadmin:false, game:finalarr,lowerteam:lowerteam,lowerteams:lowerteams,lowerteamss:lowerteamss,gamee:gamee,style: ["matches","signed-manager-main"]})
+        if(req.session.admin)
+            res.render('matches', {notadmin:false, game:finalarr,lowerteam:lowerteam,lowerteams:lowerteams,lowerteamss:lowerteamss,gamee:gamee,style: ["matches","signed-manager-main"]})
+        else{
+            res.render('matches', {notadmin:true, game:finalarr,lowerteam:lowerteam,lowerteams:lowerteams,lowerteamss:lowerteamss,gamee:gamee,style: ["matches","loginmodal","modal","signed-manager-main"]})
+
+        }
     })
 }
 
