@@ -56,7 +56,7 @@ body{
 
 form.mp-form {
     /* display: table; */
-    width: 50%;
+    /* width: 10%; */
 }
 div.mp-form {
     display: table-row;
@@ -97,14 +97,23 @@ div.mp-form {
 
 .mp-form{
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr;
-    grid-template-areas: "x x"
-                        "a b"
-                        "d d"
-                        "c c";
+    grid-template-areas: "x x x x"
+                        "a t b y"
+                        "d d d d"
+                        "c c c c";
     width: 32em;
 }
 
+.areat{
+    grid-area:t;
+    margin-right:3em;
+}
+.areay{
+    grid-area: y;
+    margin-left:1em;
+}
 .players-home{
     display: flex;
     flex-direction: column;
@@ -119,13 +128,18 @@ div.mp-form {
 
 .areac{
     grid-area: c;
-    width: 10em;
-    /* margin-right:33%; */
+    width: 9.7em;
+    margin-top:1em;
+    /* margin-right:3em; */
 }
+/* input{
+    color-scheme: black;
+} */
 .aread{
     grid-area: d;
     width: 7em;
     height: 2em;
+    margin-top:1em;
     background-color: rgb(228, 121, 39);
     color:rgb(5, 255, 34);
     /* margin-right:33%; */

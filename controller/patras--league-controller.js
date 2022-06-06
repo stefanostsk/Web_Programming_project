@@ -2,7 +2,8 @@
 
 // const model = require('../model/meet--me-model-heroku-pg-db.js');
 
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const { Console } = require('console');
 const crypto = require("crypto");
 
 const dotenv = require('dotenv');
@@ -204,20 +205,21 @@ exports.createInitBracket = (req,res) => {
                 finalarr.shift()
             }
         }
-        console.log(uparray.length)
-        console.log(botarray.length)
+        // console.log(uparray.length)
+        // console.log(botarray.length)
 
-        console.log(finalarr.length)
+        // console.log(finalarr.length)
         // console.log(uparray)
         // console.log(botarray)
         let lowerteam = [];
         let lowerteams = [];
         let lowerteamss = []
-        if(finalarr.length>0){
-
+        
+        if(finalarr.length>1) {
+            
             if((finalarr[finalarr.length-1].team2 == "WAITING...")){
                 lowerteam = finalarr[finalarr.length-1].team1
-                console.log(lowerteam)
+                // console.log(lowerteam)
                 finalarr.pop()
             }
             if((finalarr[finalarr.length-1].team3 == undefined) && (finalarr[finalarr.length-1].team2 !== "WAITING...")){
@@ -225,7 +227,7 @@ exports.createInitBracket = (req,res) => {
                 newdict['team1'] =finalarr[finalarr.length-1].team1
                 newdict['team2'] =finalarr[finalarr.length-1].team2
                 lowerteams.push(newdict)
-                console.log(lowerteams)
+                // console.log(lowerteams)
                 finalarr.pop()
             } 
             if((finalarr[finalarr.length-1].team4 == "WAITING...")){
@@ -234,7 +236,7 @@ exports.createInitBracket = (req,res) => {
                 newdict['team2'] =finalarr[finalarr.length-1].team2
                 newdict['team3'] =finalarr[finalarr.length-1].team3
                 lowerteamss.push(newdict)
-                console.log("popped",finalarr.pop())
+                // console.log("popped",finalarr.pop())
             }
         }
 
@@ -249,20 +251,24 @@ exports.createInitBracket = (req,res) => {
     })
 }
 
+exports.showScores = (req,res) => {
+    model.showScores( (err,res) => {
+        if (err) {
+            res.send(err);
+        }
+        res.render('time-selection',{options:result.rows,date:date,notadmin:true,loggedin:true , style: ["signed-manager-main","time-selection"]})
+    })
+}
+
 exports.showallReservations = (req,res) => {
     model.showallReservations((err,result) => {
         if (err) {
             res.send(err);
         }
-        console.log(result.rows)
-        console.log(Date(result.rows[0].StartDate))
+
         let sdffsd = new Date(result.rows[0].StartDate)
-        console.log(sdffsd)
-        console.log(sdffsd.getUTCFullYear())
-        console.log(sdffsd.getUTCDate())
-        console.log(sdffsd.getUTCMonth())
         let date = sdffsd.getUTCMonth()+"-"+sdffsd.getUTCDate()+"-"+sdffsd.getUTCFullYear()
-        console.log(date)
+
         res.render('time-selection',{options:result.rows,date:date,notadmin:true,loggedin:true , style: ["signed-manager-main","time-selection"]})
     })
 }
@@ -298,13 +304,16 @@ exports.showPlayersforUpdate = (req,res) => {
 }
 
 exports.updateGame = (req,res) => {
-
-    model.updateGame(req.body.GameID[0],req.body.PlayerHomeID,req.body.PlayerAwayID,(err,result) => {
+    // console.log(req.body.Goalies)
+  if(req.body.GameID){
+      console.log(req.body.GameID[0],req.body.Goalies,req.body.PlayerHomeID,req.body.PlayerAwayID)
+    model.updateGame(req.body.GameID[0],req.body.Goalies,req.body.PlayerHomeID,req.body.PlayerAwayID,(err,result) => {
         if (err) {
             res.send(err);
         }
         res.render('admin-update', {notadmin:false, style: ["admin-update","signed-manager-main"]})
     })
+  }
 }
 
 
@@ -508,3 +517,30 @@ exports.checkAdminAuthenticated = function (req, res, next) {
         res.redirect('/admin-login');
     }
 }
+
+//showallreservations
+
+ // let datelist = []
+        
+        // // console.log(result)
+        
+        // result.rows.forEach( (el) => {
+        //     let datedict = {}
+        //     let datein = new Date(el.StartDate)
+        //     // console.log(datein)/
+        //     datedict['start'] = (parseInt((String(el.StartDate).slice(16)).slice(0,2))*4 + parseInt((String(el.StartDate).slice(16)).slice(3,5))/15)==0?1:
+        //     parseInt((String(el.StartDate).slice(16)).slice(0,2))*4 + parseInt((String(el.StartDate).slice(16)).slice(3,5))/15
+        //     // console.log(String(result.rows[0].StartDate),String(result.rows[0].StartDate).slice(16).slice(0,2))
+        //     datedict['end'] = (String(el.EndDate).slice(16)).slice(0,2)*4 + (String(el.EndDate).slice(16)).slice(3,5)/15?01:
+        //     (String(el.EndDate).slice(16)).slice(0,2)*4 + (String(el.EndDate).slice(16)).slice(3,5)/15
+
+        //     datedict['datein'] = (String(datein.getUTCMonth()).length===2?datein.getUTCMonth():"0"+datein.getUTCMonth())+"-"+(String(datein.getUTCDate()).length===2?datein.getUTCDate():"0"+datein.getUTCDate())+"-"+datein.getUTCFullYear()
+        //     datelist.push(datedict)
+        // })
+        // console.log(datelist)
+
+        // console.log((String(result.rows[0].StartDate).slice(16)).slice(3,5))
+        // console.log((String(result.rows[0].StartDate).slice(16)).slice(0,2))
+
+        // console.log((String(result.rows[0].StartDate).slice(16)).slice(0,5))
+        // console.log((String(result.rows[0].EndDate).slice(16)).slice(0,5))

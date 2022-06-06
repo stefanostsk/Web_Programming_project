@@ -39,7 +39,7 @@
                   <ul>
                     <li>
                       <button class="sign-in" id="signinbtn">
-                        <a>
+                        <a href="/logout">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="50" height="50" 
                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" 
                             stroke-linecap="round" stroke-linejoin="round">
@@ -98,6 +98,15 @@
                       {{/each}}
                     </div>
 
+                    <div class="areat">
+                      {{#each homeplayer}}
+                      
+                        <div class="mp-form">
+                        <input type="text" name="Goalies" style="width:2em" placeholder="Goals" value="">
+                        </div>
+                      {{/each}}
+                    </div>
+
                     <div class="players-away">
                       {{#each awayplayer}}
                         <input style="display:none" name="GameID" value="{{this.GameID}}">
@@ -108,6 +117,17 @@
                         </div>
                       {{/each}}
                     </div>
+
+                     <div class="areay">
+                      {{#each awayplayer}}
+                
+
+                        <div class="mp-form">
+                        <input type="text" name="Goalies" style="width:2em" placeholder="Goals" value="">
+                        </div>
+                      {{/each}}
+                    </div>
+
                     <button class="admin-btn areac" >Update Game</button>
                 </form>
             </div>
@@ -129,25 +149,27 @@
 
                 <form class="mp-form" method="POST" action="/update-game"> 
                     <div class="players-home">
-                      {{#each homeplayer}}
-                        <input style="display:none" name="GameID" value="{{this.GameID}}">
+                      {{!-- {{#each homeplayer}} --}}
+                        {{!-- <input style="display:none" name="GameID" value="{{this.GameID}}">
                         <input style="display:none" name="PlayerHomeID" value="{{this.PlayerID}}">
 
                         <div class="mp-form">
                         <input type="text" name="Home{{@index}}Player" placeholder="Player Home" value="{{this.FullName}}">
-                        </div>
-                      {{/each}}
+                        </div> --}}
+                      {{!-- {{/each}} --}}
                     </div>
 
+        
+
                     <div class="players-away">
-                      {{#each awayplayer}}
-                        <input style="display:none" name="GameID" value="{{this.GameID}}">
+                      {{!-- {{#each awayplayer}} --}}
+                        {{!-- <input style="display:none" name="GameID" value="{{this.GameID}}">
                         <input style="display:none" name="PlayerAwayID" value="{{this.PlayerID}}">
 
                         <div class="mp-form">
                         <input type="text" name="Away{{@index}}Player" placeholder="Player Away" value="{{this.FullName}}" >
-                        </div>
-                      {{/each}}
+                        </div> --}}
+                      {{!-- {{/each}} --}}
                     </div>
                     <button class="admin-btn areac" >Update Game</button>
                 </form>

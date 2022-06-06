@@ -17,19 +17,19 @@ router.get('/registration-page', (req, res) => res.render('registration-page',{ 
 router.get('/statistics',patrasleagueController.getStats, (req, res) => res.render('statistics',{notadmin:true,loggedin:false,style:["modal","loginstyle","statistics","index"]}))
 
 // router.get('/yes',patrasleagueController.showMyTeam)
-router.get('/team-layout-management',patrasleagueController.showMyTeam)
-router.get('/time-selection',patrasleagueController.showallReservations, (req, res) => res.render('time-selection',{notadmin:true,loggedin:true , style: ["signed-manager-main","time-selection"]}))
-router.post('/time-selection',patrasleagueController.dotimeSelection, (req, res) => res.render('time-selection',{notadmin:true,loggedin:true , style: ["signed-manager-main","time-selection"]}))
+router.get('/team-layout-management',patrasleagueController.checkAuthenticated,patrasleagueController.showMyTeam)
+router.get('/time-selection',patrasleagueController.checkAuthenticated,patrasleagueController.showallReservations, (req, res) => res.render('time-selection',{notadmin:true,loggedin:true , style: ["signed-manager-main","time-selection"]}))
+router.post('/time-selection',patrasleagueController.checkAuthenticated,patrasleagueController.dotimeSelection, (req, res) => res.render('time-selection',{notadmin:true,loggedin:true , style: ["signed-manager-main","time-selection"]}))
 
-router.get('/time-selection/reserve-stadium', (req, res) => res.render('time-selection',{notadmin:true,loggedin:true ,reservationmade:true,reservation: req.session.dateData, style: ["signed-manager-main","time-selection","alert2"]}))
+router.get('/time-selection/reserve-stadium',patrasleagueController.checkAuthenticated, (req, res) => res.render('time-selection',{notadmin:true,loggedin:true ,reservationmade:true,reservation: req.session.dateData, style: ["signed-manager-main","time-selection","alert2"]}))
 // reservation:{"date":(req.session.dateData)[0].date,"st":(req.session.dateData)[0].startTime,"et":(req.session.dateData)[0].endTime}
-router.post('/submit1-status',patrasleagueController.doinsert)
+router.post('/submit1-status',patrasleagueController.checkAuthenticated,patrasleagueController.doinsert)
 // router.post('/submit-status',patrasleagueController.doPlayers)
 
 // router.post('/submit-status',patrasleagueController.doPlayers)
 
 router.get('/matches' ,patrasleagueController.createInitBracket)
-
+// ,patrasleagueController.showScores
 router.get('/scores' ,(req, res) => res.render('scores',{ notadmin:true,style:["modal","loginstyle","index","scores"]}))
 router.get('/teams',patrasleagueController.getTeamsforTeams)
 router.get('/players' ,(req, res) => res.render('players',{ notadmin:true,style:["modal","loginstyle","index","players"]}))
@@ -49,14 +49,16 @@ router.post('/admin-login', patrasleagueController.doAdminLogin)
 
 router.get('/admin', patrasleagueController.checkAdminAuthenticated, (req, res) => res.render('admin', {style: ["admin","signed-manager-main"]}))
 router.get('/admin-requests', patrasleagueController.checkAdminAuthenticated, (req, res) => res.render('admin-requests', {style: ["signed-manager-main","admin-requests"]}))
-router.get('/draw' ,patrasleagueController.getTeams, (req, res) => res.render('draw', {style: ["draw","signed-manager-main"]}))
-router.post('/draw' ,patrasleagueController.afterDrawGames, (req, res) => res.render('draw', {style: ["draw","signed-manager-main"]}))
-router.get('/admin-update' ,patrasleagueController.showGames, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
-router.get('/admin-update/playins-reset' ,patrasleagueController.resetPlayins,patrasleagueController.showGames, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
+router.get('/draw' ,patrasleagueController.checkAdminAuthenticated,patrasleagueController.getTeams, (req, res) => res.render('draw', {style: ["draw","signed-manager-main"]}))
+router.post('/draw' ,patrasleagueController.checkAdminAuthenticated,patrasleagueController.afterDrawGames, (req, res) => res.render('draw', {style: ["draw","signed-manager-main"]}))
+router.get('/admin-update' ,patrasleagueController.checkAdminAuthenticated,patrasleagueController.showGames, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
+router.get('/admin-update/playins-reset' ,patrasleagueController.checkAdminAuthenticated,patrasleagueController.resetPlayins,patrasleagueController.showGames, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
 
-router.post('/expand-teams' ,patrasleagueController.showPlayersforUpdate)
+router.post('/expand-teams' ,patrasleagueController.checkAdminAuthenticated,patrasleagueController.showPlayersforUpdate)
 // , (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]})
-router.post('/update-game' ,patrasleagueController.updateGame, (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]}))
+
+router.post('/update-game' ,patrasleagueController.checkAdminAuthenticated,patrasleagueController.updateGame)
+// , (req, res) => res.render('admin-update', {style: ["admin-update","signed-manager-main"]})
 
 // router.get('/draw/sucess' , (req, res) => res.render('draw', {standingssubmited:true,style: ["draw","signed-manager-main","alert2"]}))
 //patrasleagueController.checkAdminAuthenticated

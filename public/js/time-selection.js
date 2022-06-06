@@ -281,7 +281,7 @@ function createOption (e){
 
         if(act === 1){
             // newOption.style.backgroundImage = "url('/public/images/team-logos/boston.jpg');
-            newOption.style.backgroundImage = "url('/images/team-logos/boston.jpg')";
+            newOption.style.backgroundImage = "url('/images/logo.png')";
             newOption.style.backgroundSize = "140px";
             newOption.style.backgroundPosition= "center";
             newOption.style.backgroundRepeat = "repeat";
@@ -289,7 +289,7 @@ function createOption (e){
         }
         else if(act === 2){
             // newOption.style.backgroundImage = "url('/public/images/team-logos/boston.jpg') , url('/public/images/team-logos/evergreen.jpg') , url('/public/images/VS.png')";
-            newOption.style.backgroundImage = "url('/images/team-logos/boston.jpg') , url('/images/team-logos/evergreen.jpg') , url('/images/VS.png')";
+            newOption.style.backgroundImage = "url('/images/logo.png') , url('/images/logo.png') , url('/images/VS.png')";
 
             newOption.style.backgroundSize = "34%";
             // newOption.innerHTML = `<span>VS</span>`;

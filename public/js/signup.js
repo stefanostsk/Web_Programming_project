@@ -26,9 +26,9 @@ togglePassword2.addEventListener('click', function (e) {
 function validateForm() {
   var pass1 = document.forms["signupform"]["UserPass"].value;
   var pass2 = document.forms["signupform"]["UserPass2"].value;
-  
+  console.log(pass1,pass2)
   if ((pass1 !== pass2) || pass1=='') {
-    alert("Δεν ταιριάζουν οι κωδικοί!");
+    alert("Επιβεβαιώστε ξανά τον κωδικό σας!");
     return false;
   }
   if (document.forms["signupform"]["UserEmail"].value=='' && document.forms["signupform"]["LibPhone1"].value=='') {

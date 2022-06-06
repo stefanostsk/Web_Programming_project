@@ -356,7 +356,11 @@
                 <td>1</td>
                 <td>{{this.TeamName}}</td>
                 <td>{{this.FullName}}</td>
+            {{#if this.GamesPlayed}}
                 <td>{{this.GamesPlayed}}</td>
+            {{else}}
+                <td>1</td>
+            {{/if}}
                 <td>3</td>
                 <td>{{this.Goals}}</td>
                 <td>{{this.Passes}}</td>

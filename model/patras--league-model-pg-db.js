@@ -325,7 +325,7 @@ exports.afterDrawGames = function(bodyData,callback) {
 			.catch(e => callback(e))
 		}
 
-	
+
 
 exports.createInitBracket = function(req,callback) {
 	let currYear = new Date().getUTCFullYear()
@@ -333,7 +333,7 @@ exports.createInitBracket = function(req,callback) {
 	const query = {
 		text: `SELECT "HomeTeam","AwayTeam","GameDate","GameID"
 		FROM public."Game" 
-		WHERE "GameDate"> '${currYear}-07-01 00:00:00' ;`,
+		WHERE "GameDate"> '${currYear}-07-01 00:00:00' AND "GameDate"<'${currYear+1}-02-01 00:00:00' ;`,
 		values: []
 	}
 
@@ -347,6 +347,11 @@ exports.createInitBracket = function(req,callback) {
 		}
 	})
 }
+
+
+
+
+
 
 exports.showallReservations = function(callback) {
 	const query = {
@@ -468,8 +473,10 @@ exports.resetPlayins = function(req,callback){
 	let currYear = new Date().getUTCFullYear()
 
 	const query = {
+		// WHERE "GameID" NOT IN (SELECT "GameID" FROM public."Participate") AND
 		text: `DELETE FROM public."Game"
-		WHERE "GameDate"> '${currYear}-07-01 00:00:00' AND "GameDate"< '${currYear+1}-02-01 00:00:00';`,
+		WHERE "GameID" NOT IN (SELECT "GameID" FROM public."Participate") AND
+		"GameDate"> '${currYear}-07-01 00:00:00' AND"GameDate"<'${currYear+1}-02-01 00:00:00';`,
 		values: []
 	}
 	  sql.query(query, (err, res) => {
@@ -507,27 +514,47 @@ exports.showGames = function(req,callback) {
 }
 
 
-exports.updateGame = function(gameid,homeplayersid,awayplayersid,callback) {
+
+exports.updateGame = function(gameid,goalies,homeplayersid,awayplayersid,callback) {
 
 	let promiseList = []
+	let promiseList2 = []
+
 	let allplayersid = [...homeplayersid,...awayplayersid]
-
+	// goalies.forEach((el) => {
+	// 	if (el=== ""){
+	// 		el=0
+	// 	}
+	// })
+	console.log(goalies)
 	allplayersid.forEach( (el) => {
-		const query = {
-			text: `INSERT INTO public."Participate" ("GameID","PlayerID")
-			VALUES ($1,$2);`,
-			values: [gameid,el]
-		}
-		promiseList.push(
-			sql.query(query)
-		)
-	});
-	Promise.all(promiseList)
-		.then(callback(null))
-		.catch(e => callback(e))
+			const query = {
+				text: `INSERT INTO public."Participate" ("GameID","PlayerID")
+				VALUES ($1,$2);`,
+				values: [gameid,el]
+			}
+			promiseList.push(
+				sql.query(query)
+			)
+		});
+		Promise.all(promiseList)
+			.then(() => { 
+				allplayersid.forEach( (el,index) => {
+					const query = {
+						text: `INSERT INTO public."Actions" ("GameID","PlayerID","Goals")
+						VALUES ($1,$2,$3);`,
+						values: [gameid,el,goalies[index]?goalies[index]:0]
+					}
+					promiseList2.push(
+						sql.query(query)
+					)
+				});
+				Promise.all(promiseList2)
+				.then(() => callback(null))
+			})
+			.catch(e => 
+				callback(e))
 }
-
-
 
 
 
