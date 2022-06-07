@@ -513,7 +513,6 @@ exports.doAdminLogin = function (req, res) {
 
 exports.checkAdminAuthenticated = function (req, res, next) {
     //Αν η μεταβλητή συνεδρίας έχει τεθεί, τότε ο χρήστης είναι συνεδεμένος
-        // console.log("🚀 ~ file: library-network-controller.js ~ line 475 ~ req.originalUrl", req.session)
 
     if(req.session.admin){
         next()
